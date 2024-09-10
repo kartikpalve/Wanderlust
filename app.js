@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const path = require("path");
@@ -49,9 +50,9 @@ app.get("/listings/:id", async (req, res) => {
 app.post("/listings/", async (req, res) => {
   let listing = req.body.listing;
   console.log(listing);
-  const newlisting = new Listing(req.body.listing);
-  await newlisting.save();
-  res.redirect("/listings/");
+  // const newlisting = new Listing(req.body.listing);
+  // await newlisting.save();
+  // res.redirect("/listings/");
 });
 
 // app.get("/testListing",async (req,res)=>{
