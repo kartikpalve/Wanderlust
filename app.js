@@ -79,20 +79,8 @@ app.delete("/listings/:id", async (req, res) => {
   res.redirect(`/listings`);
 });
 
-// app.get("/testListing",async (req,res)=>{
-//   let samplelisting= new Listing({
-//     title:"My villa",
-//     description:"by the beach",
-//     price:6000,
-//     location:"pune, Maharashtra",
-//     country:"India",
-//   });
+// error handling usig middlewares
 
-//   await samplelisting.save();
-//   console.log("sample was saved");
-//   res.send("testing succesfull");
-
-// });
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
